@@ -85,3 +85,20 @@ describe "Nave de combate" {
 	}
 }
 
+describe "Nave de residuos"{
+	const nave = new NaveDeResiduos(carga = 5000, velocidad = 20000)
+	test "recibir Amenaza"{
+		assert.equals(5000, nave.carga())
+		assert.equals(20000, nave.velocidad())
+		nave.recibirAmenaza()
+		assert.equals(0, nave.velocidad())
+		assert.equals(5000, nave.carga())
+	}
+}
+describe "Nave de pasajeros prueba"{
+	const nave = new NaveDePasajeros(velocidad = 20000)
+	test "encontrarse enemigo"{
+		nave.encontrarEnemigo()
+		assert.equals(0, nave.velocidad())
+	}
+}
